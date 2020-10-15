@@ -20,7 +20,7 @@
 
     list: [node_1 label, node_2 label, ..., node_n label]
     node_1 is the starting point.
-    mode_n is the ending point.
+    node_n is the ending point.
 
 
 
