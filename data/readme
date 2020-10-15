@@ -1,0 +1,26 @@
+1. read "linked_table_attributes.npy" file:
+   
+   linked_table = np.load("linked_table_attributes.npy", allow_pickle=True).item()
+
+   The format of "linked_table" is a "dict". 
+   The keys are node labels. 
+   The value is a "list". As for the each element of the "list", the format is [linked_node, distance, indoor_or_not, area]
+   
+   indoor_or_not: if it is true, the value is "1", otherwise, the value is "0"
+   area: area1: 1, area2: 2, area3: 3, area4: 4
+
+ 2. read "edges.csv" file:
+
+    edges = pd.read_csv("edges.csv", index_col=None)
+
+    the columns of the "csv" file is ["node1", "node2", "distance", "indoor", "area"]
+
+
+ 3. output format of the algorithm
+
+    list: [node_1 label, node_2 label, ..., node_n label]
+    node_1 is the starting point.
+    mode_n is the ending point.
+
+
+
