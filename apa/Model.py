@@ -28,7 +28,7 @@ class SimpleModel(Model):
     def __init__(self, data_seeds):
         super(Model, self).__init__()
         self.initial_data(data_seeds)
-        self.super_parameters = [w0, w1, w2, w3]
+        self.super_parameters = [10, 1, 3, 1]
         
     def initial_data(self, data_seeds):
         # TO DO: temperature can be a interface from Internet
@@ -64,6 +64,14 @@ class SimpleModel(Model):
             return temperature
         else:
             return 2*temperature
+
+
+class TemperatureSeed(object):
+    def __init__(self, name):
+        self.name = name
+
+    def run(time):
+        return 20.0
 
 
 class DensitySeed(object):

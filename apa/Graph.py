@@ -53,7 +53,8 @@ def generate_graph(edges_csv, nodes_csv):
                        d_attitude=None, indoor=element[3], area=element[4])
 
     for i, element in nodelist.iterrows():
-        graph.add_node(element[0], xxxxx)
+        graph.add_node(element[0], 
+                       lat=element[1], lon=element[2], height=element[3])
 
     return graph
 
