@@ -36,9 +36,9 @@ class Graph(object):
     def neighbors(self, node_name):
         return neighbors_name_list
 
-    def get_edge_data(self, node_a, node_b):
-        edg = 
-        return {'distance': edg.distance, 'weight': edg.weight}
+    # def get_edge_data(self, node_a, node_b):
+    #     edg = 
+    #     return {'distance': edg.distance, 'weight': edg.weight}
 
 
 def generate_graph(edges_csv, nodes_csv):
@@ -49,12 +49,12 @@ def generate_graph(edges_csv, nodes_csv):
     for i, element in edgelist.iterrows():
         graph.add_edge(element[0], element[1], 
                        weight=None,
-                       distance=element[2], density=None, temp=None
+                       distance=element[2], density=None, temp=None,
                        d_attitude=None, indoor=element[3], area=element[4])
 
     for i, element in nodelist.iterrows():
         graph.add_node(element[0], 
-                       lat=element[1], lon=element[2], height=element[3])
+                       lat=element[1], lon=element[2], altitude=element[3])
 
     return graph
 
