@@ -1,4 +1,4 @@
-# Copyright (c) 2020 by BionicDL Lab. All Rights Reserved.
+# Copyright (c) 2020 by APA Group. All Rights Reserved.
 # -*- coding:utf-8 -*-
 '''
 @File: Graph.py
@@ -7,6 +7,8 @@
 @Contact: hwangeh@connect.ust.hk
 @Description:
 '''
+import pandas as pd
+import networkx as nx
 
 class Node(object):
     def __init__(self, name, altitude, location):
@@ -16,6 +18,7 @@ class Node(object):
 
 
 class Edge(object):
+    # TO DO: add indoor/outdoor flag
     def __init__(self, distance, weight, start, end):
         self.distance = distance
         self.weight = weight
@@ -36,3 +39,21 @@ class Graph(object):
     def get_edge_data(self, node_a, node_b):
         edg = 
         return {'distance': edg.distance, 'weight': edg.weight}
+
+
+def generate_graph(edges_csv, nodes_csv):
+    graph = nx.Graph()
+    edgelist = pd.read_csv(edges_csv)
+    nodelist = pd.read_csv(nodes_csv)
+
+    for i, element in edgelist.iterrows():
+        graph.add_edge(element[0], element[1], 
+                       weight=None,
+                       distance=element[2], density=None, temp=None
+                       d_attitude=None, indoor=element[3], area=element[4])
+
+    for i, element in nodelist.iterrows():
+        graph.add_node(element[0], xxxxx)
+
+    return graph
+

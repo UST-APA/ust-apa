@@ -1,4 +1,4 @@
-# Copyright (c) 2020 by BionicDL Lab. All Rights Reserved.
+# Copyright (c) 2020 by APA Group. All Rights Reserved.
 # -*- coding:utf-8 -*-
 '''
 @File: Algorithms.py
@@ -14,6 +14,7 @@ class Algorithms(object):
         pass
 
     def run(self, *args, **kwargs):
+        # TODO: return weight, density, temp, path(nodes and edges)
         raise NotImplementedError(' Does not implement run function. ')
 
 
