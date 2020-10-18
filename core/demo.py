@@ -22,5 +22,5 @@ def update_model(graph, model, time):
 
 
 def shortest_path(graph, source, target):
-    path = nx.shortest_path(graph, source=source, target=target)
+    path = nx.shortest_path(graph, weight='weight', source=source, target=target)
     return path
