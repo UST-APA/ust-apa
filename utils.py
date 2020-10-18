@@ -39,6 +39,15 @@ def roadColor(density):
     elif density<40: return 'orange'
     else: return 'red'
 
+def roadWeight(density):
+
+    return 5 * (abs(density / 5) + 1.5)
+
+def roadDelay(density):
+
+    return 800 - abs(density) * 30
+
+
 def read_coordiantes_file(file_path = 'data/nodes.csv'):
     '''Load coordinates data, Default:(data/nodes.csv)'''
     coordinates = pd.read_csv(file_path, index_col=0)
