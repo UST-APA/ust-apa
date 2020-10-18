@@ -28,7 +28,7 @@ class SimpleModel(Model):
     def __init__(self, data_seeds):
         super(Model, self).__init__()
         self.initial_data(data_seeds)
-        self.super_parameters = [10, 1, 3, 1]
+        self.super_parameters = [10, 1, 8, 2.5]
         
     def initial_data(self, data_seeds):
         # TO DO: temperature can be a interface from Internet
