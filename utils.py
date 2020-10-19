@@ -41,7 +41,7 @@ def roadColor(density):
 
 def roadWeight(density):
 
-    return 5 * (abs(density / 5) + 1.5)
+    return return max(3, 12-abs(density)/2.5)
 
 def roadDelay(density):
 
