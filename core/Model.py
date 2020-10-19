@@ -28,7 +28,7 @@ class SimpleModel(Model):
     def __init__(self, data_seeds):
         super(Model, self).__init__()
         self.initial_data(data_seeds)
-        self.super_parameters = [10, 1, 8, 2.5]
+        self.super_parameters = [10, 1, 8, 3.5]
         
     def initial_data(self, data_seeds):
         # TO DO: temperature can be a interface from Internet
@@ -61,7 +61,7 @@ class SimpleModel(Model):
         return graph
 
     def f(self, density, t):
-        sample = np.random.normal(loc=density, scale=0.1*density, size=1)
+        sample = np.random.normal(loc=density, scale=0.01*density, size=1)
         return sample[0]
     
     def g(self, temperature, io):

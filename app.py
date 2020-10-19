@@ -49,6 +49,7 @@ def runMap():
     global graph
     global model
     model.temperature_seed.tem = temp
+    print(model.temperature_seed.tem)
     graph = update_model(graph, model, time)
     path = shortest_path(graph, source = start, target = end)
     cost_time = get_cost_time(graph, path)
@@ -102,7 +103,7 @@ def runMap():
     LayerControl().add_to(ust_map)
 
     html_string = ust_map.get_root().render()
-    return render_template('map.html', html_string = html_string, time_cost = round(cost_time/550.0,1), path = path_to_text(path,graph))
+    return render_template('map.html', html_string = html_string, time_cost = round(cost_time/800.0,1), path = path_to_text(path,graph))
     # return ust_map._repr_html_()
 
 if __name__ == '__main__':
