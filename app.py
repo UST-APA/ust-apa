@@ -12,8 +12,7 @@ from utils import *
 from core.Model import TemperatureSeed
 from core.demo import *
 
-
-#model initialization
+# model initialization
 temperature_m = TemperatureSeed('temp', 20)
 graph, model = initiate_model('data/nodes.csv', 'data/edges.csv', temperature_m)
 
@@ -30,10 +29,12 @@ def index():
 def menu():
     form = MenuForm() #NTD: Auto fill the selectFiled tables
     form = addChoices(form)
+    form = addDateChoices(form)
 
     if form.validate_on_submit():
         # flash(f" Last time, Start from : {form.start.data}, Destination : {form.destination.data}")
-        return redirect(url_for('runMap', start=form.start.data, end=form.destination.data, time=form.time.data))
+        return redirect(url_for('runMap', start=form.start.data, end=form.destination.data, time=form.time.data,
+                                temp=form.date.data))
     return render_template('menu.html',form=form)
 
 @app.route('/map',methods=['GET','POST'])
@@ -42,10 +43,12 @@ def runMap():
     start = request.args.get('start')
     end = request.args.get('end')
     time = float(request.args.get('time'))
+    temp = float(request.args.get('temp'))
 
     '''model part'''
     global graph
     global model
+    model.temperature_seed.tem = temp
     graph = update_model(graph, model, time)
     path = shortest_path(graph, source = start, target = end)
     cost_time = get_cost_time(graph, path)
@@ -99,7 +102,7 @@ def runMap():
     LayerControl().add_to(ust_map)
 
     html_string = ust_map.get_root().render()
-    return render_template('map.html', html_string = html_string, time_cost = cost_time/550.0, path = path_to_text(path,graph))
+    return render_template('map.html', html_string = html_string, time_cost = round(cost_time/550.0,1), path = path_to_text(path,graph))
     # return ust_map._repr_html_()
 
 if __name__ == '__main__':

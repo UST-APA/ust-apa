@@ -13,6 +13,16 @@ def addChoices(form, file_path = 'data/nodes.csv'):
     form.destination.choices = node_rename_pairs
     return form
 
+def addDateChoices(form):
+    temp_date_pairs = []
+    for i in range(1,30):
+        if i < 20:
+            temp_date_pairs.append((30,f"Sept {i}"))
+        else:
+            temp_date_pairs.append((20, f"Sept {i}"))
+    form.date.choices = temp_date_pairs
+    return form
+
 def initMap(tiles, latitude = 22.336251, longtitude = 114.265612,):
     base_map = folium.Map(location=[latitude, longtitude], zoom_start=17, \
                          tiles=tiles, attr='default')
@@ -40,8 +50,7 @@ def roadColor(density):
     else: return 'red'
 
 def roadWeight(density):
-
-    return 5 * (abs(density / 5) + 1.5)
+    return max(16, 16 - abs(density) / 2.5)
 
 def roadDelay(density):
 

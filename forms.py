@@ -20,4 +20,6 @@ class MenuForm(FlaskForm):
                                 ('16','4:00 pm'),('17','5:00 pm'),('18','6:00 pm'),('19','7:00 pm'),
                                 ('20','8:00 pm'),('21','9:00 pm'),('22','10:00 pm'),('23','11:00 pm'),])
 
+    date = SelectField('Date', choices=[(20,'default')])
+
     submit = SubmitField('submit')
