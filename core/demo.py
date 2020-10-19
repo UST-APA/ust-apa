@@ -24,3 +24,10 @@ def update_model(graph, model, time):
 def shortest_path(graph, source, target):
     path = nx.shortest_path(graph, weight='weight', source=source, target=target)
     return path
+
+
+def get_cost_time(graph, path):
+    cost_time = 0
+    for i in range(len(path)-1):
+        cost_time += graph.get_edge_data(path[i], path[i+1])['weight']
+    return cost_time
