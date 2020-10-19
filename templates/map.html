@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+{%  extends 'base.html'%}
+    {% block content %}
+        <div id="path" style="width: 1500px; margin: 20px">
+            <div id = 'show_result' style="width:1200px; float:left;">
+                <iframe srcdoc="{{ html_string }}" frameborder="0" width="1200" height="900"></iframe>
+            </div>
+            <div id = 'text_result' style="width:300px; float:left; text-align: center;">
+                <button></button>
+                <h2>Optimal Time Cost</h2>
+                <textarea cols="30" rows="3" >{{ time_cost }}</textarea>
+                <h2>Optimal Path</h2>
+                <textarea cols="30" rows="10" >{{ path }}</textarea>
+            </div>
+        </div>
+    {% endblock %}
+</html>

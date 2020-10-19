@@ -75,3 +75,16 @@ def hash_map(point_pairs):
         hash_table[hash_key] = [points, point_pairs[i][0]]
     return hash_table
 
+def path_to_text(path,graph):
+    text = ''
+    turn_count = 1
+    for i,node in enumerate(path):
+        if i<len(path)-1:
+            if not graph.nodes[node]['rename'] == 'Null':
+                text += f"{graph.nodes[node]['rename']} --> "
+            else:
+                text += f"TurnPoint-{turn_count} --> "
+                turn_count+=1
+        else:
+            text += f"{graph.nodes[node]['rename']}"
+    return text
