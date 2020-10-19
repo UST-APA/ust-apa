@@ -3,14 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to use UST APA</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div>Jump to:
-        <a href="{{ url_for('index') }}">Index</a>
-        <a href="{{ url_for('menu') }}">Menu</a>
+    <div id="header">
+        <div id="blogTitle">
+            <span class="title" style="
+                margin-top:10px;
+                height:100px;
+                line-height:100px;
+                font-size:48px;
+                padding-left:20px;
+                font-weight:bold;
+                font-family: 'DejaVu Serif', 'STIX', serif;">UST_APA</span>
+            <span class="subtitle" style="
+                padding-left:10px;
+                font-size:18px;
+                line-height:36px;
+                color:#999;
+                margin:10px 0;
+                font-weight:bold;
+                font-family: 'DejaVu Serif', 'STIX', serif;">Developed by Group14</span>
+        </div>
+
+        <div id="navigator">
+            <ul id="navList">
+                <li><a href="{{ url_for('index') }}">Index</a></li>
+                <li><a href="{{ url_for('menu') }}">Menu</a></li>
+                <li style="float:right"><a class="active" href="#about">About</a></li>
+            </ul>
+        </div>
     </div>
+
+
     <hr>
+
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ur>

@@ -2,21 +2,32 @@
 <html lang="en">
 {%  extends 'base.html'%}
     {% block content %}
-        <h1> Start Search </h1>
-        <form action="" method = "post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.start.label }}<br>
-            {{ form.start}}
-        </p>
-        <p>
-            {{ form.destination.label }}<br>
-            {{ form.destination }}
-        </p>
-        <p>{{ form.submit()}}</p>
+        <div id="search" style="padding-left: 50px">
+            <h1 style="font-family: 'Times New Roman', Times, serif"> Start Search </h1>
+            <form action="" method = "post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.start.label }}<br>
+                {{ form.start}}
+            </p>
+            <p>
+                {{ form.destination.label }}<br>
+                {{ form.destination }}
+            </p>
+            <p>
+                {{ form.time.label }}<br>
+                {{ form.time }}
+            </p>
 
-        </form>
+            <p>{{ form.submit()}}</p>
 
+            </form>
+        </div>
+        
+        <div id="map" style="padding-left: 100px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.199554103061!2d114.26598255140462!3d22.336275301367163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404046bc19c7e15%3A0x2bedd58f9cf841be!2z6aaZ5riv56eR5oqA5aSn5a2m!5e0!3m2!1szh-CN!2shk!4v1603076773038!5m2!1szh-CN!2shk"
+                    width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
     {% endblock %}
 
 </html>

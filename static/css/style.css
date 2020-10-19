@@ -1,0 +1,77 @@
+body {
+    font-size:15px;
+    padding:0;
+    margin:0;
+    font-family: "Helvetica","Arial",serif;
+    background:#ccc url('http://images.cnblogs.com/cnblogs_com/wuguanglin/969799/o_background.jpg') no-repeat top center fixed;
+    min-width:1200px;
+}
+
+#header {
+    padding:20px;
+}
+
+#blogTitle{
+    color:#666;
+}
+.title {
+    margin-top:10px;
+    height:100px;
+    line-height:100px;
+    font-size:48px;
+    padding-left:5px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight:bold;
+}
+.subtitle {
+    padding-left:240px;
+    font-size:36px;
+    line-height:36px;
+    color:#999;
+    margin:10px 0;
+    font-weight:bold;
+    font-family: 'DejaVu Serif', 'STIX', serif;
+}
+
+ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+    border: 1px solid #555;
+}
+
+#navigator {
+    font-family:"Helvetica","Arial",serif;
+    font-size:20px;
+    height:48px;
+    background:#666;
+    text-align:start;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#navList li {
+    margin:0;
+    line-height:48px;
+    display:inline-block;
+    float:left;
+}
+
+#navList li a {
+    padding:0 30px;
+    text-decoration:none;
+    line-height:48px;
+    border:0;
+    color:#fff;
+    display:inline-block;
+}
+
+#navList li:hover:not(.active) {
+    background:#ccc;
+}
+.active {
+    background-color: #4CAF50;
+}
+
+
+

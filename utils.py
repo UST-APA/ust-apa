@@ -45,7 +45,7 @@ def roadWeight(density):
 
 def roadDelay(density):
 
-    return 800 - abs(density) * 30
+    return 600 + abs(density) * 50
 
 
 def read_coordiantes_file(file_path = 'data/nodes.csv'):
